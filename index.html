@@ -74,35 +74,47 @@
             .contact-links:hover {
                 color: white;
             }
-            /* Add these styles to your existing style section */
-            @media (max-width: 640px) {
-                .logo {
-                    height: 40px; /* Smaller logo on mobile */
+
+            @media (max-width: 639px) {
+                .contact-links {
+                    font-size: 0.875rem;
+                }
+
+                nav {
+                    background: rgba(0, 0, 0, 0.8);
+                    backdrop-filter: blur(8px);
+                }
+            }
+
+            @media (min-width: 640px) and (max-width: 1023px) {
+                nav {
+                    background: rgba(0, 0, 0, 0.6);
+                    backdrop-filter: blur(8px);
                 }
             }
         </style>
     </head>
     <body class="bg-black">
-        <!-- Replace only the header section with this: -->
-        <header class="fixed top-0 z-20 w-full">
-            <nav class="2lg:px-12 mx-auto max-w-7xl px-6 py-12 lg:px-12 xl:px-6 2xl:px-0">
-                <div class="flex items-center justify-between">
+        <header class="relative top-0 z-20 w-full">
+            <nav class="2lg:px-12 mx-auto max-w-7xl px-6 py-6 md:py-8 lg:py-12 lg:px-12 xl:px-6 2xl:px-0">
+                <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <a href="/" class="flex items-center gap-4">
-                        <span class="text-2xl font-light tracking-widest text-white">Faunafilm</span>
+                        <span class="text-xl font-light tracking-widest text-white sm:text-2xl">Faunafilm</span>
                     </a>
 
-                    <div class="flex items-center gap-8">
-                        <div class="flex">
-                            <a href="mailto:info@faunafilm.cz" class="contact-links">info@faunafilm.cz</a>
-                            /
-                            <a href="tel:+420602271402" class="contact-links">+420 602 271 402</a>
+                    <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
+                        <div class="flex flex-col gap-2 sm:flex-row sm:items-center">
+                            <a href="mailto:info@faunafilm.cz" class="contact-links text-sm sm:text-base">info@faunafilm.cz</a>
+                            <span class="hidden px-2 text-white/80 sm:inline">/</span>
+                            <a href="tel:+420602271402" class="contact-links text-sm sm:text-base">+420 602 271 402</a>
                         </div>
-                        <img src="/images/logo.png" alt="Faunafilm Logo" class="h-24 w-auto" />
+                        <img src="/images/logo.png" alt="Faunafilm Logo" class="order-first h-16 sm:order-last sm:ml-4 sm:h-20 lg:ml-8 lg:h-24" width="96" height="96" />
                     </div>
                 </div>
             </nav>
         </header>
-        <main class="relative pt-32">
+
+        <main class="relative pt-16 sm:pt-4">
             <div class="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
                 <div class="max-w-4xl">
                     <h1 class="mb-8 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
@@ -130,14 +142,12 @@
         <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-                // Create carousel container
                 const wrapper = document.getElementById("carouselWrapper");
                 if (!wrapper) {
                     console.error("Carousel wrapper not found");
                     return;
                 }
 
-                // Create the container element
                 const container = document.createElement("div");
                 container.className = "carousel-container";
                 container.id = "carouselContainer";
@@ -176,14 +186,13 @@
                 function moveCarousel() {
                     currentIndex++;
 
-                    // Get the slide width based on screen size
                     let slideWidth;
                     if (window.innerWidth >= 1024) {
-                        slideWidth = 20; // 5 slides on desktop
+                        slideWidth = 20;
                     } else if (window.innerWidth >= 768) {
-                        slideWidth = 33.333; // 3 slides on tablet
+                        slideWidth = 33.333;
                     } else {
-                        slideWidth = 100; // 1 slide on mobile
+                        slideWidth = 100;
                     }
 
                     container.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
@@ -200,7 +209,6 @@
                     }
                 }
 
-                // Update carousel on window resize
                 let resizeTimer;
                 window.addEventListener("resize", () => {
                     clearTimeout(resizeTimer);
@@ -214,7 +222,6 @@
                     }, 250);
                 });
 
-                // Start the carousel
                 setInterval(moveCarousel, 4000);
             });
         </script>
