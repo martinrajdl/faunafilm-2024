@@ -1,32 +1,22 @@
-<h1>Tailwind 3.1 - Vite boilerplate</h1>
+## Faunafilm public website
 
-A tailwindcss v3 - Vite project starter
+### Prerequisites
 
-<h2>Tools</h2>
+-   Node.js (v14 or higher)
+-   npm (v6 or higher)
 
--   Tailwindcss v3 : UI
--   Vite 2.9
--   Vanilla
--   Prettier
--   Postcss
+### Installation
 
-## Build Setup
+1. Install dependencies:
 
-```bash
-# install dependencies
-$ npm install
-# serve with hot reload at localhost:3000
-$ npm run dev
-# build for production and launch server
-$ npm run build
-# preview production
-$ npm run preview
+    ```sh
+    npm install
+    ```
+
+### Development
+
+To start the development server, run:
+
+```sh
+npm run dev
 ```
-
-### `assets`
-
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
-
-### `src`
-
-The src directory contains your app ui (html files) and your JavaScript.
