@@ -74,13 +74,31 @@
             .contact-links:hover {
                 color: white;
             }
+            /* Add these styles to your existing style section */
+            @media (max-width: 640px) {
+                .logo {
+                    height: 40px; /* Smaller logo on mobile */
+                }
+            }
         </style>
     </head>
     <body class="bg-black">
+        <!-- Replace only the header section with this: -->
         <header class="fixed top-0 z-20 w-full">
             <nav class="2lg:px-12 mx-auto max-w-7xl px-6 py-12 lg:px-12 xl:px-6 2xl:px-0">
                 <div class="flex items-center justify-between">
-                    <a href="/" class="text-2xl font-light tracking-widest text-white">Faunafilm</a>
+                    <a href="/" class="flex items-center gap-4">
+                        <span class="text-2xl font-light tracking-widest text-white">Faunafilm</span>
+                    </a>
+
+                    <div class="flex items-center gap-8">
+                        <div class="flex">
+                            <a href="mailto:info@faunafilm.cz" class="contact-links">info@faunafilm.cz</a>
+                            /
+                            <a href="tel:+420602271402" class="contact-links">+420 602 271 402</a>
+                        </div>
+                        <img src="/images/logo.png" alt="Faunafilm Logo" class="h-24 w-auto" />
+                    </div>
                 </div>
             </nav>
         </header>
